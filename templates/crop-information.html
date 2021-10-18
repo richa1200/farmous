@@ -1,0 +1,117 @@
+{% extends 'layout.html' %} 
+
+{% block navbar %}
+
+<li class="nav-item">
+	<a class="nav-link" href="{{ url_for('home') }}">  Home</a>
+</li>
+<li class="nav-item">
+	<a class="nav-link" href="{{ url_for('crop_recommend') }}">  Crop</a>
+</li>
+<li class="nav-item">
+	<a class="nav-link" href="{{ url_for('fertilizer_recommendation') }}">  Fertilizer</a>
+</li>
+<li class="nav-item">
+	<a class="nav-link" href="{{ url_for('disease_prediction') }}">  Disease</a>
+</li>
+<li class="nav-item">
+	<a class="nav-link active" href="{{ url_for('crop_information') }}">Information</a>
+</li>
+
+{% endblock %}
+
+{% block body %}
+
+<style>
+  html body {
+    background-image: linear-gradient(to right, rgb(226, 243, 231), white);
+  }
+</style>
+<!--Form Section-->
+<br /><br />
+<h2 style="text-align: center; margin: 0px; color: black">
+  Get cultivation tips for your crops
+</h2>
+<br />
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <div
+        style="
+          width: 350px;
+          height: 34rem;
+          margin: 30px auto 0px auto;
+          color: black;
+          border-radius: 25px;
+          padding: 10px 10px;
+        "
+      >
+        <form method="POST" action="{{ url_for('info_fetch') }}">
+      
+          <div class="form-group">
+            <label for="crop" style="font-size: 17px"
+              ><b> Crop you want to grow</b></label
+            >
+            <select
+              name="cropname"
+              class="form-control"
+              id="crop"
+              placeholder="Select a crop"
+              required
+            >
+              <option selected>Select crop</option>
+              <option>tomato</option>
+              <option>carrot</option>
+              <option>beans</option>
+              <option>beets</option>
+              <option>broccoli</option>
+              <option>cabbage</option>
+              <option>cauliflower</option>
+              <option>cucumber</option>
+              <option>maize</option>
+              <option>eggplant</option>
+              <option>onion</option>
+              <option>garlic</option>
+              <option>peas</option>
+              <option>bell pepper</option>
+              <option>potato</option>
+              <option>pumpkin</option>
+              <option>radish</option>
+              <option>spinach</option>
+              <option>turnip</option>
+              <option>watermelon</option>
+              <option>rosemary</option>
+              <option>sweet potato</option>
+            </select>
+          </div>
+      
+          <div class="d-flex justify-content-center">
+            <button
+              type="submit"
+              class="btn btn-info"
+              style="
+                color: black;
+                font-weight: bold;
+                width: 230px;
+                height: 50px;
+                border-radius: 12px;
+                font-size: 18px;
+              "
+            >
+              Get Crop Information
+            </button>
+          </div>
+          </form>
+       </div>
+      </div>
+    <div class="col-6">
+      <img src="../static/images/farmer-07.png" alt="image">
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

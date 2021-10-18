@@ -1,0 +1,38 @@
+{% extends 'layout.html' %} 
+
+{% block navbar %}
+
+<li class="nav-item">
+	<a class="nav-link" href="{{ url_for('home') }}">  Home</a>
+</li>
+<li class="nav-item">
+	<a class="nav-link active" href="{{ url_for('crop_recommend') }}">  Crop</a>
+</li>
+<li class="nav-item">
+	<a class="nav-link" href="{{ url_for('fertilizer_recommendation') }}">  Fertilizer</a>
+</li>
+<li class="nav-item">
+	<a class="nav-link" href="{{ url_for('disease_prediction') }}">  Disease</a>
+</li>
+<li class="nav-item">
+	<a class="nav-link" href="{{ url_for('crop_information') }}">Information</a>
+</li>
+
+{% endblock %}
+
+{% block body %}
+
+
+<div class="container py-2 mx-auto my-50" style="margin: 4rem; min-height: 66vh;">
+  <div class="row">
+      <div class="col-sm py-2">
+          <div class="card card-body" style="justify-content: center;">
+               <h2 class="text-center">You should grow <i>{{ prediction }} </i>in your farm</h2>
+          </div>
+      </div>
+  </div>
+  <div style="width: 100%;">
+    <center><img src="{{ image_url }}" style= " height: 400px; width: 500px; padding-top: 30px; "/></center>
+  </div>
+</div>
+{% endblock %}

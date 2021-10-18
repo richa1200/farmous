@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>{{ title }}</title>
+	<link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon-1.ico') }}"/>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<meta name="keywords" content="Responsive web template />
+
+	
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link href="{{ url_for('static', filename='css/bootstrap.css') }}" rel='stylesheet' type='text/css' />
+	<link href="{{ url_for('static', filename='css/style.css') }}" rel='stylesheet' type='text/css' />
+	<link href="{{ url_for('static', filename='css/layout.css') }}" rel='stylesheet' type='text/css' />
+	<link href="{{ url_for('static', filename='fontawesome/css/all.css') }}" rel='stylesheet' type='text/css' />
+
+	
+</head>
+
+<body>
+
+
+<section class="" id="home"  style="background-image: url('../static/images/leaves.png'); background-size: cover;" >
+    <div class="container" style="max-width: 700px;">
+        <div class="row align-items-center" style="height: 90vh; ">
+            <!-- <div class="col-lg-1" ></div> -->
+            <div class="col text-center" style="margin-top: 30px;">
+                <div class="text-center">
+                    <img src="{{ url_for('static', filename='images/logo.png') }}" style="width: 300px; height: 85px" alt="">
+                    <p style="font-size: 20px; margin-bottom: 20px;">A website for farmers to help make the right decisions in cultivating the right crops with the right care.</p>
+                    <div class="banner-btn" style="margin: 15px 0 20px 0;">
+                        <a href="{{ url_for('home') }}" class="btn btn-success btn-lg" style="border-radius: 30px; margin: 15px 0;">
+                            <i class="fas fa-arrow-left p-1"></i>
+                        Home
+                        <span></span>
+                        </a>
+                    </div>
+                    <h6 style="font-weight: 400; margin: 80px 20px 20px 20px;">Made with ❤ by: </h6>
+                    <h5 style="font-weight: 400; margin-bottom: 10px;">Richa Gupta </h5>
+                    <h5 style="font-weight: 400;">CS Junior @ ABV-IIITM Gwalior </h5>
+                    
+                </div>
+            </div>
+            <!-- <div class="col-lg-6">
+                <div class="banner-image">
+                <img src="../static/images/farmer-06.png" alt="image">
+                </div>
+            </div> -->
+            
+        </div>
+	</div>
+</section>
+
+<footer class="text-center py-3">
+    <div class="container py-md-2">
+        <p> Copyright &copy; 2021 Farmous</p>			
+    </div>
+</footer>
+
+</body>
+
+</html>

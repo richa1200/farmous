@@ -1,0 +1,262 @@
+{% extends 'layout.html' %}
+
+{% block navbar %}
+
+<li class="nav-item">
+	<a class="nav-link active" href="{{ url_for('home') }}">Home
+		<span class="sr-only">(current)</span>
+	</a>
+</li>
+<li class="nav-item">
+	<a class="nav-link" href="{{ url_for('crop_recommend') }}">Crop</a>
+</li>
+<li class="nav-item">
+	<a class="nav-link" href="{{ url_for('fertilizer_recommendation') }}">Fertilizer</a>
+</li>
+<li class="nav-item">
+	<a class="nav-link" href="{{ url_for('disease_prediction') }}">Disease</a>
+</li>
+<li class="nav-item">
+	<a class="nav-link" href="{{ url_for('crop_information') }}">Information</a>
+</li>
+
+{% endblock %}
+
+
+{% block body %}
+
+<!-- banner -->
+<section class="home-item item-bg" id="home"  style="background-image: url('../static/images/leaves.png'); background-size: cover;" >
+	<div class="d-table">
+		<div class="d-table-cell">
+			<div class="container-fluid">
+				<div class="row align-items-center" style="height: 90vh; ">
+					<div class="col-lg-1" ></div>
+					<div class="col-lg-4">
+						<div class="main-banner-content" style="margin-left: 6rem;">
+							<h1 style="font-size: 65px;">Farmous </h1>
+							<h5 style="font-weight: 400;">Get informed decisions about what crop would be most suitable to grow in your farm, detect disease caught by a plant, get fertilizer recommendations for your crop and get cultivation tips. </h5>
+							<div class="banner-btn" style="margin: 20px 0 20px 0;">
+								<a href="#getstarted" class="btn btn-success btn-lg" style="border-radius: 30px; margin: 15px 0;">
+								Get Started
+								<span></span>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<div class="banner-image">
+						<img src="../static/images/farmer-09.png" alt="image">
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+</section>
+<!-- //banner -->
+
+
+<section class="cultivation-area pt-100 pb-70" >
+    <div class="container">
+        <div class="cultivation-title">
+            <h3>Our Services</h3>
+        </div>
+    <div class="row">
+        <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="cultivation-item">
+                <div class="cultivation-image">
+                    <img src="../static/images/cultivation-white.png" alt="image">                                 
+                    <a href="{{ url_for('crop_recommend') }}" class="details-btn">
+                    <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="cultivation-content">
+                    <div class="icon">
+                         <i><img src="../static/images/icons/12.png" alt="" style="padding-top: 40px; max-width: 120px; max-height: 150px;"></i>                        
+                    </div>
+                    <!-- <img src="../static/images/icons/5.png" alt="" style=" padding: 40px;"> -->
+                    <!-- <h3><b>Crop</b></h3>
+                    <h3><b>Recommendation</b></h3> -->
+                    
+                </div> 
+            </div>
+            <div class="m-auto text-center" style="color: green;">
+                <h5 style="color: green;">Crop</h5>
+                <h5 style="color: green;">Recommendation</h5>
+            </div>
+
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="cultivation-item">
+                <div class="cultivation-image">
+                    <img src="../static/images/cultivation-white.png" alt="image">
+                    <a href="{{ url_for('disease_prediction') }}" class="details-btn">
+                    <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="cultivation-content">
+                    <div class="icon">
+                        <i><img src="../static/images/icons/10.png" alt="" style="padding-top: 40px; max-width: 120px; max-height: 150px;"></i>
+                    </div>
+                    <!-- <h3><b>Crop</b></h3>
+                    <h3><b>Disease Detection</b></h3> -->
+                </div>
+            </div>
+            <div class="m-auto text-center" style="color: green;">
+                <!-- <h5 style="color: green;">Crop</h5> -->
+                <h5 style="color: green;">Disease Detection</h5>
+            </div>
+
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="cultivation-item">
+                <div class="cultivation-image">
+                    <img src="../static/images/cultivation-white.png" alt="image">
+                    <a href="{{ url_for('fertilizer_recommendation') }}" class="details-btn">
+                    <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="cultivation-content">
+                    <div class="icon">
+                        <i><img src="../static/images/icons/13.png" alt="" style="padding-top: 30px; max-width: 120px; max-height: 150px;"></i>
+                    </div>
+                    <!-- <h3><b>Fertilizer</b></h3>
+                    <h3><b>Recommendation</b></h3> -->
+                </div>
+            </div>
+            <div class="m-auto text-center" style="color: green;">
+                <h5 style="color: green;">Fertilizer</h5>
+                <h5 style="color: green;">Recommendation</h5>
+            </div>
+
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="cultivation-item">
+                <div class="cultivation-image">
+                    <img src="../static/images/cultivation-white.png" alt="image">
+                    <a href="{{ url_for('crop_information') }}" class="details-btn">
+                    <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="cultivation-content">
+                    <div class="icon">
+                        <i><img src="../static/images/icons/9.png" alt="" style="padding-top: 40px; max-width: 120px; max-height: 150px;"></i>
+                    </div>
+                    <!-- <h3><b>Crop</b></h3>
+                    <h3><b>Cultivation Tips</b></h3> -->
+                </div>
+            </div>
+            <div class="m-auto text-center" style="color: green;">
+                <h5 style="color: green;">Cultivation Tips</h5>
+            </div>
+
+        </div>
+    </div>
+    </div>
+    <div class="default-shape">
+        <div class="default-shape-one">
+            <img src="../static/images/default-shape/shape.png" alt="image">
+        </div>
+        <div class="default-shape-two">
+            <img src="../static/images/default-shape/shape-2.png" alt="image">
+        </div>
+    </div>
+</section>
+
+
+
+<section class="brief-section" style="padding-top: 70px;"  id="getstarted">
+    <div class="container">
+        <div class="section-title m-0">
+            <span>GET STARTED</span>
+            <h3>Accelarate farming efficiency with our help</h3>
+            <p></p>
+            <div class="brief-btn">
+                <a href="{{ url_for('about_us') }}" class="optional-btn">
+                About Us
+                <i class="fas fa-plus"></i>
+                </a>
+            </div>
+        </div>
+        <!-- <div class="brief-image">
+            <img src="../static/images/brief-image.png" alt="image">
+        </div> -->
+    </div>
+</section>
+
+
+<section class="brief-section ptb-100"> <!-- style="background-image: url('../static/images/brief-bg.png'); height: 1000px;"> -->
+	<div class="container">
+		<div class="row">
+			<div class="col-4">
+				<img src="../static/images/farmer-01.png" alt="image">
+			</div>
+			<div class="col-8  text-center m-auto">
+                <h3 style="margin-bottom: 10px;">Find the right crop for your farm</h3>
+                <p>Confused which crop you should grow in your farm for optimal yield? Try our Crop Recommendation tool that gives you the best crop suitable in your farm's soil attributes, location, season and weather conditions</p>
+                <div class="brief-btn">
+                    <a href="{{ url_for('crop_recommend') }}" class="optional-btn">
+                    Take Me there
+                    <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+			</div>
+		</div>	
+        <div style="height: 70px;"></div>
+		<div class="row">
+			<div class="col-8  text-center m-auto">
+                <h3 style="margin-bottom: 10px;">Plant does not look healthy? Just take a picture</h3>
+                <p>Take a picture of plant leaf that looks unhealthy to you. Recieve instant diagnosis from our AI image recognition technology and get comprehensive cure for the disease</p>           
+                <div class="brief-btn">
+                    <a href="{{ url_for('disease_prediction') }}" class="optional-btn">
+                    Take Me there
+                    <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+			</div>
+			<div class="col-4">
+                <img src="../static/images/farmer-08.png" alt="image">
+			</div>
+		</div>
+        <div style="height: 70px;"></div>
+        <div class="row">
+			<div class="col-4">
+				<img src="../static/images/farmer-13.png" alt="image">
+			</div>
+			<div class="col-8 text-center m-auto">
+                <h3  style="margin-bottom: 10px;">Find the required fertilizer for your crop</h3>
+                <p>Use the Fertilizer Recommendation tool to find out which fertilizer your crop requires for optimal growth based on your farm's soil readings and reduce wastage by using only what is required for the crop being grown</p>
+                <div class="brief-btn">
+                    <a href="{{ url_for('fertilizer_recommendation') }}" class="optional-btn">
+                    Take Me there
+                    <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+			</div>
+		</div>	
+        <div style="height: 70px;"></div>
+		<div class="row">
+			<div class="col-8 text-center m-auto">
+                <h3  style="margin-bottom: 10px;">Get crop information and cultivation tips</h3>
+                <p>Learn about the maintenance of crops like watering required, sunlight required, spacing required, how to prevent pests and diseases, how to harvest etc and improve the yield of the crop </p>           
+                <div class="brief-btn">
+                    <a href="{{ url_for('crop_information') }}" class="optional-btn">
+                    Take Me there
+                    <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+			</div>
+			<div class="col-4">
+                <img src="../static/images/farmer-07.png" alt="image">
+			</div>
+		</div>
+	</div>
+</section>
+
+</html>
+
+{% endblock %}

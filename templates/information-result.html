@@ -1,0 +1,99 @@
+{% extends 'layout.html' %} 
+
+{% block navbar %}
+
+<li class="nav-item">
+	<a class="nav-link" href="{{ url_for('home') }}">  Home</a>
+</li>
+<li class="nav-item">
+	<a class="nav-link" href="{{ url_for('crop_recommend') }}">  Crop</a>
+</li>
+<li class="nav-item">
+	<a class="nav-link" href="{{ url_for('fertilizer_recommendation') }}">  Fertilizer
+  </a>
+</li>
+<li class="nav-item">
+	<a class="nav-link" href="{{ url_for('disease_prediction') }}">  Disease</a>
+</li>
+<li class="nav-item">
+	<a class="nav-link active" href="{{ url_for('crop_information') }}">Information</a>
+</li>
+
+{% endblock %}
+
+
+{% block body %}
+
+
+<div class="container py-2 mx-auto" style="margin: 3rem;">
+  <div style="width: 100%;">
+    <h3 class="text-center"> {{info.name}} </h3>
+    <center><img src="{{ image_url }}" style= " height: 300px; width: 400px; padding: 30px; "/></center>
+  </div>
+   <table id="data" class="table table-striped " style="font-size: 20px;">
+    
+    <tbody>
+        
+        <tr>
+          <td><b>Description</b></td>
+          <td>{{ info.description }}</td>
+        </tr>
+        <tr>
+          <td><b>Optimal Sun</b></td>
+          <td>{{ info.optimal_sun }}</td>
+        </tr>
+        <tr>
+          <td><b>Optimal Soil</b></td>
+          <td>{{ info.optimal_soil }}</td>
+        </tr>
+        <tr>
+          <td><b>Planting Considerations</b></td>
+          <td>{{ info.planting_considerations }}</td>
+        </tr>
+        <tr>
+          <td><b>When to plant</b></td>
+          <td>{{ info.when_to_plant }}</td>
+        </tr>
+        <tr>
+          <td><b>Growing from seed</b></td>
+          <td>{{ info.growing_from_seed }}</td>
+        </tr>
+        <tr>
+          <td><b>Transplanting</b></td>
+          <td>{{ info.transplanting }}</td>
+        </tr>
+        <tr>
+          <td><b>Spacing</b></td>
+          <td>{{ info.spacing }}</td>
+        </tr>
+        <tr>
+          <td><b>Watering</b></td>
+          <td>{{ info.watering }}</td>
+        </tr>
+        <tr>
+          <td><b>Feeding</b></td>
+          <td>{{ info.feeding }}</td>
+        </tr>
+        <tr>
+        <tr>
+          <td><b>Diseases</b></td>
+          <td>{{ info.diseases }}</td>
+        </tr>
+        <tr>
+          <td><b>Pests</b></td>
+          <td>{{ info.pests }}</td>
+        </tr>       
+        <tr>
+          <td><b>Harvesting</b></td>
+          <td>{{ info.harvesting }}</td>
+        </tr>
+    </tbody>
+  </table> 
+
+
+  <!-- <div>
+    <h3>{{info.name}}</h3>
+    <img src={{info.image_url}} />
+    </div> -->
+</div>
+{% endblock %}
